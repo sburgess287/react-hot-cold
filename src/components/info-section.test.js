@@ -7,4 +7,13 @@ describe (<InfoSection />, () => {
   it('Renders without crashing', () => {
     shallow(<InfoSection />)
   });
+
+  it('contains correct html elements', () => {
+    const wrapper = shallow(<InfoSection />);
+    expect(wrapper.exists('h2')).toEqual(true);
+    expect(wrapper.exists('p')).toEqual(true);
+    expect(wrapper.exists('ol')).toEqual(true);
+    expect(wrapper.exists('li')).toEqual(true);
+
+  })
 });
