@@ -3,18 +3,32 @@ import {shallow, mount} from 'enzyme';
 
 import TopNav from './top-nav';
 
-// TopNave component takes props
+// TopNav component, mounts Dom and verifies props
 describe ('<TopNav />', () => {
   it('Renders without crashing', () => {
     shallow(<TopNav />)
   });
 
+
   it('should restart game on click', () => {
-    const wrapper = shallow(<TopNav />);
-    wrapper.simulate('click'); // not sure if I'm clicking the correct thing
-    expect(wrapper.hasClass('new')).toEqual(false);
+    const callback = jest.fn();
+    const wrapper = shallow(<TopNav onRestartGame={callback} />);
+    const link = wrapper.find('.new');
+    link.simulate('click', {
+      preventDefault() {} //?
+    });
+    expect(callback).toHaveBeenCalled();
 
   });
 
+  it('Should call onGenerageAuralUpdate when state-of-game link clicked', () => {
+    const callback = jest.fn();
+    const wrapper = shallow(<TopNav onGenerateAuralUpdate={callback} />);
+    const link = wrapper.find('.status-link');
+    link.simulate('click', {
+      preventDefault() {}
+    })
+    expect(callback).toHaveBeenCalled();
+  })
 
 });
