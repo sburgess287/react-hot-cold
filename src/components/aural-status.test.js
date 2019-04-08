@@ -9,9 +9,9 @@ describe ('<AuralStatus />', () => {
     shallow(<AuralStatus />)
   });
 
-  it('does not show h2 until guess count is passed in', () => {
+  it('shows p', () => {
     const wrapper = shallow(<AuralStatus />);
-    expect(wrapper.exists('h2')).toEqual(false);
+    expect(wrapper.exists('p')).toEqual(true);
 
   })
 

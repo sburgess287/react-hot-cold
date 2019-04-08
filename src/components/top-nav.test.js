@@ -15,10 +15,12 @@ describe ('<TopNav />', () => {
     const wrapper = shallow(<TopNav onRestartGame={callback} />);
     const link = wrapper.find('.new');
     link.simulate('click', {
-      preventDefault() {} //?
+      preventDefault: jest.fn()
+
+       // body of the function/block (e)
     });
     expect(callback).toHaveBeenCalled();
-
+    // spy function
   });
 
   it('Should call onGenerageAuralUpdate when state-of-game link clicked', () => {
@@ -32,3 +34,8 @@ describe ('<TopNav />', () => {
   })
 
 });
+
+
+let foo = {
+  moo : 'bam'
+}
