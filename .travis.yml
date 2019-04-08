@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: gcDZgge8qbmUKmxVjsRVy9d/3qn6NACiGYZPX9Ofd1G0t5NZo+u/3rJr8rxJblsB8RkdPY/RNjZOwtCB4zu0x2FR8ZjdMk8IlUu2rBxQ6cKgkL2htOpNC1EJt/x/FZUUMp2aqh4Lcwz4M/ZYurdTOPSkAVPO5paaO/ls4hKBQG9opxKE6i0cjDVXl3ZWbqcxsFrgXISOk4PYwYHr84y97KOD5vAESiVBdvVFBLNdb7tRYHp+9u2Ob1tW5/dJaHXS3+7VNSLMM1aITFy8yPpt0Lzq27ToIlis8aFivCpZti6EyxRDxeaYoiX8U/2o5XJTMev+hcBLnaXetoDLgq+gz6AR34g3QDLjUKfvf64YVj4V0RZ0br38SmKmYIJZGV4Ap7WcHlMMbq2VvDQfHuCE//8BPuN22agSUxrlojHgFnoVKtwRv2hEi+zHy3wiuqarcWRAIPG78+HwoyMYcLMgtjnZqc55KQ71WzOFh8YsstTZl9O8xpvMcd+tzbK/kzneP3ZU8Njgpau6d0ms1QgwpG9VswH+qbMX5YFehzqfdfPuR9X7BHHk61v1xAw7/2BH9xvByGvGQn4kFoKuxLda5Q25zZIctJVw4h3QwTWYZ1m+JnTldTLOhEVJ/t8bAn/4RVTQO5N+8JTshV8PGfLgV+uPb9ZK9uxb4hgTVvzveCo=
+  app: stark-meadow-58785
+  on:
+    repo: sburgess287/react-hot-cold
