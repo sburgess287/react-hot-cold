@@ -10,6 +10,7 @@
     "react-test-renderer": "^16.8.6"
   },
   "dependencies": {
+    "deep-extend": "^0.6.0",
     "macaddress": "^0.2.9",
     "merge": "^1.2.1",
     "react": "^16.1.1",
